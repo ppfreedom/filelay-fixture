@@ -1,0 +1,18 @@
+version: 1
+platforms:
+  claude-code:
+    description: Claude Code
+  pi:
+    description: Pi coding agent
+files:
+  - source: skills/my-skill
+    targets:
+      claude-code: "{HOME}/.claude/skills/my-skill"
+      pi: "{TARGET_PATH}/skills/my-skill"
+  - source: prompts/review.md
+    targets:
+      claude-code: "{TARGET_PATH}/.claude/prompts/review.md"
+      pi: "{TARGET_PATH}/prompts/review.md"
+  - source: only-pi.md
+    targets:
+      pi: "{TARGET_PATH}/only-pi.md"
